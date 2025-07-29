@@ -20,6 +20,8 @@
       priorValue: 0.303       # PDG 2025 value: 0.307 +/- 0.012
       priorType: Flat
       parameterStepSize: 0.01
+      parameterLimits: [ 0.0, 1.0]
+      physicalLimits: [ 0.0, 1.0]
       # parameterLimits: [ 0.271, 0.343]  # 3 sigma around PDG.
 
     - name: "PMNS_SIN_SQUARED_13"
@@ -27,6 +29,8 @@
       priorValue: 0.02225     # PDG 2025 value: 0.0219 +/- 0.0006
       priorType: Flat
       parameterStepSize: 0.01
+      parameterLimits: [ 0.0, 1.0 ]
+      physicalLimits: [ 0.0, 1.0]
       # parameterLimits: [ 0.020, 0.0240 ]  # 3 sigma around PDG
 
     - name: "PMNS_SIN_SQUARED_23"
@@ -35,20 +39,20 @@
       priorType: Flat
       parameterStepSize: 0.04
       parameterLimits: [ 0.0, 1.0 ]
+      physicalLimits: [ 0.0, 1.0]
 
     - name: "PMNS_DELTA_MASS_SQUARED_21"
       isEnabled: true
       priorValue: 7.41E-5     # PDG 2025 value: 7.53E-5 +/- 0.19E-5
       priorType: Flat
       parameterStepSize: 7.0e-6
-      # parameterLimits: [ 6.96E-5, 8.10E-5 ]
+      # parameterLimits: [ 6.96E-5, 8.10E-5 ]    # 3 sigma around PDG
 
     - name: "PMNS_DELTA_MASS_SQUARED_32"
       isEnabled: true
       priorValue: 2.51E-3     # PDG 2025 value: 0.002455
       priorType: Flat
       parameterStepSize: 2.0E-4
-      parameterLimits: [ 0.0, 1.0 ]
 
     - name: "PMNS_DELTA_CP"
       isEnabled: true
