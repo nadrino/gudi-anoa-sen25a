@@ -76,7 +76,7 @@ void makeOscCovInvertedPdg24(const char* outfile = "oscCovInvertedPdg24.root")
     parSigs[5] = 0.22;
 
     // PMNS_SIGN_MASS_SQUARED_32  PDG 2024 prefers inverted
-    parVals[6] = 0.5;
+    parVals[6] = -0.5;
     parSigs[6] = 10.0;  // Mostly unconstrained
 
 
