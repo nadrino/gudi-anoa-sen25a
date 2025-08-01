@@ -1,0 +1,20 @@
+# A config to get an MCMC chain started.  This runs a job with 1M steps.
+
+fitterEngineConfig:
+
+  minimizerConfig:
+    type: SimpleMcmc
+    algorithm: metropolis
+    proposal: adaptive
+
+    burninCycles: 5
+    burninSteps: 10000
+    saveBurnin: true
+    burninSequence: |
+      for (int chain = 0; chain < gMCMC.Burnin(); ++chain) {
+        std::cout << "Start burn-in chain " << chain << std::endl;
+        gMCMC.FreezeCovariance(false);
+        gMCMC.AcceptanceWindow(100);
+        gMCMC.CovarianceWindow(gMCMC.Steps()+gMCMC.Burnin()*gMCMC.Steps()/2);
+        gMCMC.RunCycle("Burn-in",chain);
+      }
