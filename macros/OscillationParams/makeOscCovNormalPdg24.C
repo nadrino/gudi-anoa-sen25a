@@ -77,8 +77,7 @@ void makeOscCovNormalPdg24(const char* outfile = "oscCovNormalPdg24.root")
 
     // PMNS_SIGN_MASS_SQUARED_32  PDG 2024 prefers inverted
     parVals[6] = 0.5;
-    parSigs[6] = 10.0;  // Mostly unconstrained
-
+    parSigs[6] = 0.10;
 
     // ------------------------------------------------------------------ //
     // 3. Create the covariance matrix and prior vector
