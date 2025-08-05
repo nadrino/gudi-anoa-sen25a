@@ -4,6 +4,11 @@
 - name: "Oscillation Parameters"
   isEnabled: true
   nominalStepSize: 1.0
+  parameterDefinitionFilePath: "./inputs/parameters/oscProb/oscCovAveragedPdg24.root"
+  covarianceMatrix: osc_param_cov
+  parameterNameList: osc_param_names
+  parameterPriorValueList: osc_param_priors
+
   parameterDefinitions:
 
   #######################################################################
@@ -17,8 +22,7 @@
 
     - name: "PMNS_SIN_SQUARED_12"
       isEnabled: true
-      priorValue: 0.303       # PDG 2025 value: 0.307 +/- 0.012
-      priorType: Flat
+      # priorValue: 0.303       # PDG 2025 value: 0.307 +/- 0.012
       parameterStepSize: 0.01
       parameterLimits: [ 0.0, 1.0]
       physicalLimits: [ 0.0, 1.0]
@@ -26,8 +30,7 @@
 
     - name: "PMNS_SIN_SQUARED_13"
       isEnabled: true
-      priorValue: 0.02225     # PDG 2025 value: 0.0219 +/- 0.0006
-      priorType: Flat
+      # priorValue: 0.02225     # PDG 2025 value: 0.0219 +/- 0.0006
       parameterStepSize: 0.01
       parameterLimits: [ 0.0, 1.0 ]
       physicalLimits: [ 0.0, 1.0]
@@ -35,7 +38,7 @@
 
     - name: "PMNS_SIN_SQUARED_23"
       isEnabled: true
-      priorValue: 0.451       # PDG 2025 value: 0.558
+      # priorValue: 0.451       # PDG 2025 value: 0.558
       priorType: Flat
       parameterStepSize: 0.04
       parameterLimits: [ 0.0, 1.0 ]
@@ -43,8 +46,7 @@
 
     - name: "PMNS_DELTA_MASS_SQUARED_21"
       isEnabled: true
-      priorValue: 7.41E-5     # PDG 2025 value: 7.53E-5 +/- 0.19E-5
-      priorType: Flat
+      # priorValue: 7.41E-5     # PDG 2025 value: 7.53E-5 +/- 0.19E-5
       parameterStepSize: 7.0e-6
       # parameterLimits: [ 6.96E-5, 8.10E-5 ]    # 3 sigma around PDG
 
@@ -59,6 +61,9 @@
       priorValue: -2.233      # PDG 2025 value: 3.74       # 1.19 pi
       priorType: Flat
       parameterStepSize: 0.1
+      # Provide the cyclic range for the parameter.  This is only used for the
+      # MCMC where the proposal is cyclic.
+      cyclicRange: [ -3.14159265359, 3.14159265359 ]
       # Possible mirror range, but dCP is a truly cyclic parameter, and
       # mirroring can bias the posterior for Bayesian analysis (-pi and pi
       # should be adjacent, but are not with mirroring).
