@@ -123,7 +123,7 @@ done
 # If overrides are provided by the command line (or environment), then
 # an MCMC config will need to be provided, or strange things will
 # happen.
-${GUNDAM_OVERRIDES:="configMcmc.yaml"}
+echo GUNDAM OVERRIDES: ${GUNDAM_OVERRIDES:="configMcmc.yaml"}
 
 ##############################################################
 # Adjust this section for your local machine.  These need to be

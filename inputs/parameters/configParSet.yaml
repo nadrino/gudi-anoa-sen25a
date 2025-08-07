@@ -4,6 +4,11 @@
 - name: "Oscillation Parameters"
   isEnabled: true
   nominalStepSize: 1.0
+  parameterDefinitionFilePath: "./inputs/parameters/oscProb/oscCovAveragedPdg24.root"
+  covarianceMatrix: osc_param_cov
+  parameterNameList: osc_param_names
+  parameterPriorValueList: osc_param_priors
+
   parameterDefinitions:
 
   #######################################################################
@@ -17,25 +22,26 @@
 
     - name: "PMNS_SIN_SQUARED_12"
       isEnabled: true
-      priorValue: 0.303       # PDG 2025 value: 0.307 +/- 0.012
-      priorType: Flat
+      # PDG 2025 value: 0.307 +/- 0.012
+      priorValue: 0.303         # DUNE prior from Nu-Fit 5.2 w/ SK atm
       parameterStepSize: 0.01
-      parameterLimits: [ 0.0, 1.0]
       physicalLimits: [ 0.0, 1.0]
+      parameterLimits: [ 0.0, 1.0]
       # parameterLimits: [ 0.271, 0.343]  # 3 sigma around PDG.
 
     - name: "PMNS_SIN_SQUARED_13"
       isEnabled: true
-      priorValue: 0.02225     # PDG 2025 value: 0.0219 +/- 0.0006
-      priorType: Flat
-      parameterStepSize: 0.01
-      parameterLimits: [ 0.0, 1.0 ]
+      # PDG 2025 value: 0.0219 +/- 0.0006
+      priorValue: 0.02225       # DUNE prior from Nu-Fit 5.2 w/ SK atm
+      parameterStepSize: 0.0007
       physicalLimits: [ 0.0, 1.0]
-      # parameterLimits: [ 0.020, 0.0240 ]  # 3 sigma around PDG
+      parameterLimits: [ 0.0, 1.0 ]
+      # parameterLimits: [ 0.0200, 0.0240 ]  # 3 sigma around PDG
 
     - name: "PMNS_SIN_SQUARED_23"
       isEnabled: true
-      priorValue: 0.451       # PDG 2025 value: 0.558
+      # PDG 2025 value: 0.534 +0.015 -0.019 normal 0.538 +/-0.020 inverted
+      priorValue: 0.451         # DUNE prior from Nu-Fit 5.2 w/ SK atm
       priorType: Flat
       parameterStepSize: 0.04
       parameterLimits: [ 0.0, 1.0 ]
@@ -43,31 +49,32 @@
 
     - name: "PMNS_DELTA_MASS_SQUARED_21"
       isEnabled: true
-      priorValue: 7.41E-5     # PDG 2025 value: 7.53E-5 +/- 0.19E-5
-      priorType: Flat
-      parameterStepSize: 7.0e-6
+      # PDG 2025 value: 7.53E-5 +/- 0.19E-5
+      priorValue: 7.41E-5       # DUNE prior from Nu-Fit 5.2 w/ SK atm
+      parameterStepSize: 2.0e-6
       # parameterLimits: [ 6.96E-5, 8.10E-5 ]    # 3 sigma around PDG
 
     - name: "PMNS_DELTA_MASS_SQUARED_32"
       isEnabled: true
-      priorValue: 2.51E-3     # PDG 2025 value: 0.002455
+      # PDG 2025 value: 0.002455 +/- 0.00026
+      priorValue: 2.51E-3       # DUNE prior from Nu-Fit 5.2 w/ SK atm
       priorType: Flat
-      parameterStepSize: 2.0E-4
+      parameterStepSize: 2.6E-4
 
     - name: "PMNS_DELTA_CP"
       isEnabled: true
-      priorValue: -2.233      # PDG 2025 value: 3.74       # 1.19 pi
+      # PDG 2025 value: 3.74       # 1.2 pi +/- 0.2 pi
+      priorValue: -2.233        # DUNE prior from Nu-Fit 5.2 w/ SK atm
       priorType: Flat
-      parameterStepSize: 0.1
-      # Possible mirror range, but dCP is a truly cyclic parameter, and
-      # mirroring can bias the posterior for Bayesian analysis (-pi and pi
-      # should be adjacent, but are not with mirroring).
-      # mirrorRange: [ -3.14159265359, 3.14159265359 ]
+      parameterStepSize: 1.0
+      # PDG convention is [0.0, 6.28318530718] but DUNE uses this.
+      cyclicRange: [ -3.14159265359, 3.14159265359 ]
 
     - name: "PMNS_SIGN_MASS_SQUARED_32"
       isEnabled: true
       isFixed: true
-      priorValue: 0.5         # PDG 2025 value: inverted
+      # PDG 2025 value: inverted
+      priorValue: 0.5           # DUNE prior from Nu-Fit 5.2 w/ SK atm
       priorType: Flat
       parameterStepSize: 0.5
       parameterLimits: [ -1.0, 1.0 ]
