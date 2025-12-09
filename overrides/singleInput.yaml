@@ -1,0 +1,18 @@
+fitterEngineConfig:
+  likelihoodInterfaceConfig:
+    dataSetList:
+
+      - name: "FD"
+
+        model:
+          # MC files
+          filePathList:
+            # Initial flavour: nue Selected flavour: nue
+            - "${OA_INPUT_FOLDER}/atm_hdnue_x_numu_nueselec_gudi.root"
+
+        data:
+          - name: "pValueToys"
+
+            filePathList:
+              # Initial flavour: nue Selected flavour: nue
+              - "${OA_INPUT_FOLDER}/atm_hdnue_x_numu_nueselec_gudi.root"
