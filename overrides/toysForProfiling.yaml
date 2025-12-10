@@ -15,7 +15,7 @@ fitterEngineConfig:
     enableEventMcThrow: false
     gaussStatThrowInToys: false
 
-    dataSetList: 
+    dataSetList:
 
       - name: "FD"
 
@@ -25,7 +25,7 @@ fitterEngineConfig:
         - name: "pValueToys"
 
           # copy pars from MC
-          fromMc: true
+          fromModel: true
           useReweightEngine: true
           tree: "event_tree"
 
