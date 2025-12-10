@@ -4,6 +4,8 @@ fitterEngineConfig:
 
       - name: "FD"
 
+        selectedDataEntry: "pValueToys" # instead of Asimov
+
         model:
           # MC files
           filePathList:
